@@ -209,7 +209,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     // =========================
-    // 🔥 SAVE SESSION
+    // SAVE SESSION
     // =========================
     private fun saveSession(index: Int?) {
         getSharedPreferences("ACCOUNT", MODE_PRIVATE).edit()
