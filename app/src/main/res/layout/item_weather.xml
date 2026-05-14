@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="72dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="6dp">
+
+    <!-- TIME -->
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="21:00"
+        android:textColor="#8A9BB0"
+        android:textSize="10sp"
+        android:fontFamily="@font/poppinmedium"
+        android:maxLines="1"/>
+
+    <!-- TEMP -->
+
+    <TextView
+        android:id="@+id/tvTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="23°"
+        android:textStyle="bold"
+        android:textColor="#2D3A4A"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppinsbold"
+        android:maxLines="1"/>
+
+    <!-- ICON -->
+
+    <ImageView
+        android:id="@+id/imgWeather"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/ic_weather_cloudy"
+        android:scaleType="fitCenter"/>
+
+    <!-- WIND -->
+
+    <TextView
+        android:id="@+id/tvWind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="5.6 km/h"
+        android:textColor="#8A9BB0"
+        android:textSize="9sp"
+        android:fontFamily="@font/poppinmedium"
+        android:maxLines="1"
+        android:ellipsize="end"/>
+
+</LinearLayout>

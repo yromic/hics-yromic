@@ -1,137 +1,227 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_home"
-    android:fillViewport="true">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <!-- TITLE -->
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_gravity="center"
+        android:layout_marginBottom="14dp"
+        android:fontFamily="@font/poppinmedium"
+        android:text="Monitoring Chart"
+        android:textColor="@color/hijau_end"
+        android:textSize="18sp" />
 
-        <!-- Card utama -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardChart"
+    <!-- SCROLL -->
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="6dp"
-            app:cardBackgroundColor="#FFFFFF">
+            android:orientation="vertical">
 
-            <LinearLayout
+            <!-- ========================================= -->
+            <!-- WEATHER CARD -->
+            <!-- ========================================= -->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardWeather"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp">
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="2dp">
 
-                <!-- Header Row -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:layout_marginBottom="16dp">
+                    android:orientation="vertical"
+                    android:padding="12dp">
 
-                    <!-- Judul -->
-                    <TextView
-                        android:id="@+id/tvChartTitle"
-                        android:layout_width="0dp"
+                    <!-- HEADER -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Line Chart"
-                        android:textColor="@color/hijau"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:fontFamily="sans-serif-medium" />
-
-                    <!--
-                        ══════════════════════════════════════
-                        SPINNER DATA TYPE — pill teal
-                        LinearLayout sebagai wrapper pill,
-                        Spinner + ImageView arrow di dalamnya
-                        ══════════════════════════════════════
-                    -->
-                    <LinearLayout
-                        android:id="@+id/layoutSpinnerData"
-                        android:layout_width="wrap_content"
-                        android:layout_height="36dp"
-                        android:orientation="horizontal"
                         android:gravity="center_vertical"
-                        android:background="@drawable/bg_pill_teal"
-                        android:paddingStart="14dp"
-                        android:paddingEnd="10dp"
-                        android:layout_marginEnd="8dp"
-                        android:minWidth="100dp">
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp">
 
-                        <Spinner
-                            android:id="@+id/spinnerDataType"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@android:color/transparent"
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:popupBackground="@drawable/bg_dropdown_item"
-                            android:spinnerMode="dropdown" />
+                            android:fontFamily="@font/poppinsbold"
+                            android:text="Weather Forecast"
+                            android:textColor="@color/hijau_end"
+                            android:textSize="14sp" />
 
-                        <ImageView
-                            android:id="@+id/ivArrowData"
-                            android:layout_width="7dp"
-                            android:layout_height="7dp"
-                            android:layout_marginStart="4dp"
-                            android:src="@drawable/arrow_white"
-                            android:scaleType="fitCenter"
-                            android:contentDescription="dropdown" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Realtime"
+                            android:textColor="#8A9BB0"
+                            android:textSize="11sp" />
 
                     </LinearLayout>
 
-                    <!--
-                        ══════════════════════════════════════
-                        SPINNER PERIODE — pill putih + stroke
-                        ══════════════════════════════════════
-                    -->
-                    <LinearLayout
-                        android:id="@+id/layoutSpinnerPeriod"
-                        android:layout_width="wrap_content"
-                        android:layout_height="36dp"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:background="@drawable/bg_pill_white_stroke"
-                        android:paddingStart="14dp"
-                        android:paddingEnd="10dp"
-                        android:minWidth="100dp">
+                    <!-- WEATHER LIST -->
 
-                        <Spinner
-                            android:id="@+id/spinnerPeriod"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="@null"
-                            android:spinnerMode="dropdown" />
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none">
 
-                        <ImageView
-                            android:id="@+id/ivArrowPeriod"
-                            android:layout_width="7dp"
-                            android:layout_height="7dp"
-                            android:layout_marginStart="4dp"
-                            android:src="@drawable/arrow_grey"
-                            android:scaleType="fitCenter"
-                            android:contentDescription="dropdown" />
+                        <LinearLayout
+                            android:id="@+id/layoutWeatherContainer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                    </LinearLayout>
+
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
 
                 </LinearLayout>
 
-                <!-- MPAndroidChart -->
-                <com.github.mikephil.charting.charts.LineChart
-                    android:id="@+id/lineChart"
+            </androidx.cardview.widget.CardView>
+
+            <!-- ========================================= -->
+            <!-- CHART CARD -->
+            <!-- ========================================= -->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardChart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="220dp" />
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    <!-- HEADER -->
 
-    </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="14dp">
+
+                        <!-- TITLE -->
+
+                        <TextView
+                            android:id="@+id/tvChartTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppinsbold"
+                            android:text="Line Chart"
+                            android:textColor="@color/hijau_end"
+                            android:textSize="14sp" />
+
+                        <!-- SPINNER DATA -->
+
+                        <LinearLayout
+                            android:id="@+id/layoutSpinnerData"
+                            android:layout_width="wrap_content"
+                            android:layout_height="34dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/bg_pill_teal"
+                            android:gravity="center_vertical"
+                            android:minWidth="95dp"
+                            android:orientation="horizontal"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="10dp">
+
+                            <Spinner
+                                android:id="@+id/spinnerDataType"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@android:color/transparent"
+                                android:popupBackground="@drawable/bg_dropdown_item"
+                                android:spinnerMode="dropdown" />
+
+                            <ImageView
+                                android:id="@+id/ivArrowData"
+                                android:layout_width="7dp"
+                                android:layout_height="7dp"
+                                android:layout_marginStart="4dp"
+                                android:contentDescription="dropdown"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/arrow_white" />
+
+                        </LinearLayout>
+
+                        <!-- SPINNER PERIOD -->
+
+                        <LinearLayout
+                            android:id="@+id/layoutSpinnerPeriod"
+                            android:layout_width="wrap_content"
+                            android:layout_height="34dp"
+                            android:background="@drawable/bg_pill_white_stroke"
+                            android:gravity="center_vertical"
+                            android:minWidth="95dp"
+                            android:orientation="horizontal"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="10dp">
+
+                            <Spinner
+                                android:id="@+id/spinnerPeriod"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:spinnerMode="dropdown" />
+
+                            <ImageView
+                                android:id="@+id/ivArrowPeriod"
+                                android:layout_width="7dp"
+                                android:layout_height="7dp"
+                                android:layout_marginStart="4dp"
+                                android:contentDescription="dropdown"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/arrow_grey" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- CHART -->
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/lineChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
