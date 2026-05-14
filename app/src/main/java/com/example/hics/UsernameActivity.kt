@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.OnBackPressedCallback
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.android.gms.auth.api.signin.*
@@ -104,13 +105,15 @@ class UsernameActivity : AppCompatActivity() {
         btnCancel.setOnClickListener {
             logoutAndBack()
         }
-    }
 
-    // =========================
-    // 🔥 BACK HP = BATAL
-    // =========================
-    override fun onBackPressed() {
-        logoutAndBack()
+        // =========================
+        // 🔥 BACK BUTTON FIX (ANDROID BARU)
+        // =========================
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                logoutAndBack()
+            }
+        })
     }
 
     // =========================

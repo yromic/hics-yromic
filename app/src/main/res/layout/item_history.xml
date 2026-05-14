@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- ROW -->
+
+    <LinearLayout
+        android:id="@+id/rowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="12dp">
+
+        <!-- TIMESTAMP -->
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="170dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="10dp"
+            android:textColor="#2D3A4A"
+            android:textSize="12sp" />
+
+        <!-- PH -->
+
+        <TextView
+            android:id="@+id/tvPh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="100dp"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:textColor="#2D3A4A"
+            android:textSize="12sp" />
+
+        <!-- PPM -->
+
+        <TextView
+            android:id="@+id/tvPpm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="100dp"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:textColor="#2D3A4A"
+            android:textSize="12sp" />
+
+        <!-- WATER TEMP -->
+
+        <TextView
+            android:id="@+id/tvWaterTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="130dp"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:textColor="#2D3A4A"
+            android:textSize="12sp" />
+
+        <!-- AIR TEMP -->
+
+        <TextView
+            android:id="@+id/tvAirTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="130dp"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:textColor="#2D3A4A"
+            android:textSize="12sp" />
+
+        <!-- LIGHT -->
+
+        <TextView
+            android:id="@+id/tvLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="100dp"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:textColor="#2D3A4A"
+            android:textSize="12sp" />
+
+        <!-- WATER LEVEL -->
+
+        <TextView
+            android:id="@+id/tvWaterLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="140dp"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:textColor="#2D3A4A"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <!-- DIVIDER -->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EEEEEE" />
+
+</LinearLayout>

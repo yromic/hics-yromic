@@ -1,7 +1,7 @@
 plugins {
-    id("com.google.gms.google-services")
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -48,15 +48,20 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation("com.google.firebase:firebase-database:22.0.1")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation ("androidx.core:core-ktx:1.13.1")
+    implementation ("androidx.appcompat:appcompat:1.7.0")
+    implementation ("com.itextpdf:itextg:5.5.10")
+
+    // FIREBASE (PAKAI BOM)
+    implementation(platform("com.google.firebase:firebase-bom:34.7.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-database")
+
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    //firebase
-    implementation(platform("com.google.firebase:firebase-bom:34.7.0"))
-    implementation("com.google.firebase:firebase-analytics")
-    implementation("com.google.firebase:firebase-auth:22.3.1")
-    implementation("com.google.firebase:firebase-database")
-    implementation("com.google.android.gms:play-services-auth:20.7.0")
 }

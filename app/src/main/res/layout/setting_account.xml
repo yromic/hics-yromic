@@ -226,6 +226,7 @@
 
             <!--            Data & Backup-->
             <LinearLayout
+                android:id="@+id/exportCsv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -255,7 +256,7 @@
                             android:textColor="#808080"
                             android:textSize="14sp"
                             android:layout_weight="2"
-                            android:text="Eksport CSV"/>
+                            android:text="History"/>
                     </LinearLayout>
 
                     <View
