@@ -1,163 +1,428 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_home"
-    android:padding="16dp"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:text="Control"
-        android:fontFamily="@font/poppinmedium"
-        android:textColor="@color/hijau_end"
-        android:layout_gravity="center"/>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardElevation="2dp"
-        android:backgroundTint="@color/white"
-        app:cardCornerRadius="10dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/mode"
-                android:layout_marginRight="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mode : "
-                android:fontFamily="@font/poppinmedium"
-                android:textColor="@color/hijau_end"
-                android:textSize="14sp"/>
-            <TextView
-                android:id="@+id/mode"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" Auto"
-                android:textStyle="italic"
-                android:layout_weight="1"
-                android:fontFamily="@font/poppinmedium"
-                android:textColor="@color/hijau_end"
-                android:textSize="14sp"/>
-            <LinearLayout
-                android:id="@+id/switchMode"
-                android:layout_width="50dp"
-                android:layout_height="26dp"
-                android:padding="3dp"
-                android:layout_marginRight="10dp"
-                android:orientation="horizontal"
-                android:background="@drawable/bg_switch_off">
-                <View
-                    android:id="@+id/circleMode"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:background="@drawable/bg_circle"/>
-            </LinearLayout>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/tvStatusMode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="10sp"
-        android:text="Sistem berjalan otomatis berdasarkan thershold"
-        android:textColor="#000000"
-        android:fontFamily="@font/poppinsregular"
-        android:textStyle="italic"
-        android:layout_marginTop="10dp"/>
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:weightSum="2">
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:weightSum="4"
-            android:orientation="vertical"
-            android:layout_weight="1">
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_home"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- TITLE -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppinmedium"
+            android:text="Control"
+            android:textColor="@color/hijau_end"
+            android:textSize="20sp" />
+
+        <!-- MODE -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@android:color/white"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="3dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="2">
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/mode" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinmedium"
+                    android:text="Mode : "
+                    android:textColor="@color/hijau_end"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/mode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppinmedium"
+                    android:text="Auto"
+                    android:textColor="@color/hijau_end"
+                    android:textSize="14sp"
+                    android:textStyle="italic" />
+
                 <LinearLayout
-                    android:id="@+id/pumpLayout"
+                    android:id="@+id/switchMode"
+                    android:layout_width="50dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/bg_switch_off"
+                    android:orientation="horizontal"
+                    android:padding="3dp">
+
+                    <View
+                        android:id="@+id/circleMode"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/bg_circle" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvStatusMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/poppinsregular"
+            android:text="Sistem berjalan otomatis berdasarkan threshold"
+            android:textColor="#666666"
+            android:textSize="10sp"
+            android:textStyle="italic" />
+
+        <!-- ROW 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <!-- POMPA -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/pumpLayout"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"
+                android:backgroundTint="@android:color/white"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:elevation="5dp"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginLeft="0dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="40dp"
-                    android:background="@drawable/bg_button"
+                    android:gravity="center"
                     android:orientation="vertical"
-                    android:weightSum="4"
-                    app:cardCornerRadius="20dp">
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/pompa_air" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppinmedium"
+                        android:text="Pompa Air"
+                        android:textColor="#08AAA3"
+                        android:textSize="12sp" />
+
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:paddingLeft="10dp"
-                        android:gravity="center_vertical"
-                        android:layout_weight="1">
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/pompa_air"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Pompa Air"
-                            android:layout_marginLeft="5dp"
-                            android:fontFamily="@font/poppinmedium"
-                            android:textSize="14sp"
-                            android:textColor="#08AAA3"/>
+                        android:id="@+id/switchPump"
+                        android:layout_width="50dp"
+                        android:layout_height="26dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg_switch_off"
+                        android:orientation="horizontal"
+                        android:padding="3dp">
+
+                        <View
+                            android:id="@+id/circlePump"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/bg_circle" />
                     </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/statusSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="-"
+                        android:textColor="#08AAA3"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- PH UP -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/phUpLayout"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="2.5dp"
+                android:backgroundTint="@android:color/white"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ph_up" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppinmedium"
+                        android:text="pH Up"
+                        android:textColor="#08AAA3"
+                        android:textSize="12sp" />
+
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:gravity="center"
-                        android:layout_weight="2">
-                        <LinearLayout
-                            android:id="@+id/switchPump"
-                            android:layout_width="50dp"
-                            android:layout_height="26dp"
-                            android:padding="3dp"
-                            android:orientation="horizontal"
-                            android:background="@drawable/bg_switch_off">
-                            <View
-                                android:id="@+id/circlePump"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:background="@drawable/bg_circle"/>
-                        </LinearLayout>
+                        android:id="@+id/switchPhUp"
+                        android:layout_width="50dp"
+                        android:layout_height="26dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg_switch_off"
+                        android:orientation="horizontal"
+                        android:padding="3dp">
+
+                        <View
+                            android:id="@+id/circlePhUp"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/bg_circle" />
                     </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/statusPhUp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="-"
+                        android:textColor="#08AAA3"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- PH DOWN -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/phDownLayout"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:layout_marginStart="5dp"
+                android:backgroundTint="@android:color/white"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ph_down" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppinmedium"
+                        android:text="pH Down"
+                        android:textColor="#08AAA3"
+                        android:textSize="12sp" />
+
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:gravity="center"
-                        android:layout_weight="1">
-                        <TextView
-                            android:id="@+id/statusSwitch"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="-"
-                            android:fontFamily="@font/poppinsbold"
-                            android:textSize="14sp"
-                            android:textColor="#08AAA3"/>
+                        android:id="@+id/switchPhDown"
+                        android:layout_width="50dp"
+                        android:layout_height="26dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg_switch_off"
+                        android:orientation="horizontal"
+                        android:padding="3dp">
+
+                        <View
+                            android:id="@+id/circlePhDown"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/bg_circle" />
                     </LinearLayout>
-                </LinearLayout  >
-            </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/statusPhDown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="-"
+                        android:textColor="#08AAA3"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
         </LinearLayout>
+
+        <!-- ROW 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- NUTRISI UP -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/nutrisiUpLayout"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"
+                android:backgroundTint="@android:color/white"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/nutrisi_up" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppinmedium"
+                        android:text="Nutrisi Up"
+                        android:textColor="#08AAA3"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:id="@+id/switchNutrisiUp"
+                        android:layout_width="50dp"
+                        android:layout_height="26dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg_switch_off"
+                        android:orientation="horizontal"
+                        android:padding="3dp">
+
+                        <View
+                            android:id="@+id/circleNutrisiUp"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/bg_circle" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/statusNutrisiUp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="-"
+                        android:textColor="#08AAA3"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- NUTRISI DOWN -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/nutrisiDownLayout"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:layout_marginStart="5dp"
+                android:backgroundTint="@android:color/white"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/nutrisi_down" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppinmedium"
+                        android:text="Nutrisi Down"
+                        android:textColor="#08AAA3"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:id="@+id/switchNutrisiDown"
+                        android:layout_width="50dp"
+                        android:layout_height="26dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg_switch_off"
+                        android:orientation="horizontal"
+                        android:padding="3dp">
+
+                        <View
+                            android:id="@+id/circleNutrisiDown"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/bg_circle" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/statusNutrisiDown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="-"
+                        android:textColor="#08AAA3"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
     </LinearLayout>
-</LinearLayout>
+
+</ScrollView>

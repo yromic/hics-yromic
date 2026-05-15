@@ -49,7 +49,7 @@ class ChartFragment : Fragment() {
 
     // GANTI DENGAN KODE WILAYAH BMKG
     // contoh Semarang = 33.74.06.1001
-    // TEGAL
+
     private val bmkgAreaCode = "33.74.06.1001"
 
     private val dataTypeList = listOf(
@@ -220,105 +220,112 @@ class ChartFragment : Fragment() {
             val cuacaArray =
                 firstData.getJSONArray("cuaca")
 
-            if (cuacaArray.length() == 0)
-                return result
-
-            val weatherPerDay =
-                cuacaArray.getJSONArray(0)
-
             val currentTime =
                 System.currentTimeMillis()
 
             val weatherTempList =
                 mutableListOf<Pair<Long, WeatherData>>()
 
-            for (i in 0 until weatherPerDay.length()) {
+            // =========================================
+            // LOOP SEMUA HARI
+            // =========================================
 
-                val item =
-                    weatherPerDay.getJSONObject(i)
+            for (dayIndex in 0 until cuacaArray.length()) {
 
-                val datetime =
-                    item.optString("local_datetime")
+                val weatherPerDay =
+                    cuacaArray.getJSONArray(dayIndex)
 
-                val suhu =
-                    item.optString("t")
+                for (i in 0 until weatherPerDay.length()) {
 
-                val wind =
-                    item.optString("ws")
+                    val item =
+                        weatherPerDay.getJSONObject(i)
 
-                val desc =
-                    item.optString("weather_desc")
+                    val datetime =
+                        item.optString("local_datetime")
 
-                val icon =
-                    getWeatherIcon(desc)
+                    val suhu =
+                        item.optString("t")
 
-                try {
+                    val wind =
+                        item.optString("ws")
 
-                    // FORMAT BMKG:
-                    // 2025-05-14 23:00:00
+                    val desc =
+                        item.optString("weather_desc")
 
-                    val parts =
-                        datetime.split(" ")
+                    val icon =
+                        getWeatherIcon(desc)
 
-                    if (parts.size < 2)
-                        continue
+                    try {
 
-                    val datePart =
-                        parts[0].split("-")
+                        // FORMAT:
+                        // 2026-05-15 03:00:00
 
-                    val timePart =
-                        parts[1].split(":")
+                        val parts =
+                            datetime.split(" ")
 
-                    val calendar =
-                        Calendar.getInstance()
+                        if (parts.size < 2)
+                            continue
 
-                    calendar.set(
-                        datePart[0].toInt(),
-                        datePart[1].toInt() - 1,
-                        datePart[2].toInt(),
-                        timePart[0].toInt(),
-                        timePart[1].toInt()
-                    )
+                        val datePart =
+                            parts[0].split("-")
 
-                    calendar.set(Calendar.SECOND, 0)
+                        val timePart =
+                            parts[1].split(":")
 
-                    val itemTime =
-                        calendar.timeInMillis
+                        val calendar =
+                            Calendar.getInstance()
 
-                    // hanya ambil waktu sekarang & masa depan
-                    if (itemTime >= currentTime) {
+                        calendar.set(
+                            datePart[0].toInt(),
+                            datePart[1].toInt() - 1,
+                            datePart[2].toInt(),
+                            timePart[0].toInt(),
+                            timePart[1].toInt()
+                        )
 
-                        val timeLabel =
-                            String.format(
-                                "%02d:%02d",
-                                timePart[0].toInt(),
-                                timePart[1].toInt()
-                            )
+                        calendar.set(Calendar.SECOND, 0)
 
-                        weatherTempList.add(
+                        val itemTime =
+                            calendar.timeInMillis
 
-                            Pair(
-                                itemTime,
-                                WeatherData(
-                                    time = timeLabel,
-                                    temp = "$suhu°",
-                                    wind = "$wind km/h",
-                                    icon = icon
+                        // hanya ambil waktu sekarang & masa depan
+                        if (itemTime >= currentTime) {
+
+                            val timeLabel =
+                                String.format(
+                                    "%02d:%02d",
+                                    timePart[0].toInt(),
+                                    timePart[1].toInt()
+                                )
+
+                            weatherTempList.add(
+
+                                Pair(
+                                    itemTime,
+                                    WeatherData(
+                                        time = timeLabel,
+                                        temp = "$suhu°",
+                                        wind = "$wind km/h",
+                                        icon = icon
+                                    )
                                 )
                             )
+                        }
+
+                    } catch (e: Exception) {
+
+                        Log.e(
+                            "BMKG_PARSE_ITEM",
+                            e.message ?: "Parse item error"
                         )
                     }
-
-                } catch (e: Exception) {
-
-                    Log.e(
-                        "BMKG_PARSE_ITEM",
-                        e.message ?: "Parse item error"
-                    )
                 }
             }
 
-            // sort waktu terdekat
+            // =========================================
+            // SORT TERDEKAT
+            // =========================================
+
             val sorted =
                 weatherTempList.sortedBy { it.first }
 

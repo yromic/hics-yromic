@@ -197,7 +197,9 @@ class MonitoringFragment: Fragment() {
     fun updateSwitchUI(isOn: Boolean) {
         if (isOn) {
             switchNotif.setBackgroundResource(R.drawable.bg_switch_on)
-            circleNotif.animate().translationX(60f).setDuration(200).start()
+            circleNotif.animate().translationX(
+                (switchNotif.width - circleNotif.width - 12).toFloat()
+            ).setDuration(200).start()
         } else {
             switchNotif.setBackgroundResource(R.drawable.bg_switch_off)
             circleNotif.animate().translationX(0f).setDuration(200).start()
