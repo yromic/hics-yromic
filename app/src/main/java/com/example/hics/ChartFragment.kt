@@ -244,7 +244,7 @@ class ChartFragment : Fragment() {
                         item.optString("local_datetime")
 
                     val suhu =
-                        item.optString("t")
+                        item.optInt("t", -999)
 
                     val wind =
                         item.optString("ws")
@@ -297,6 +297,15 @@ class ChartFragment : Fragment() {
                                     timePart[0].toInt(),
                                     timePart[1].toInt()
                                 )
+                            if (suhu !in 10..45) {
+
+                                Log.e(
+                                    "BMKG_INVALID",
+                                    "Skip suhu aneh: $suhu"
+                                )
+
+                                continue
+                            }
 
                             weatherTempList.add(
 

@@ -30,11 +30,9 @@ class DeviceFragment: Fragment() {
     private lateinit var deviceIDtv : TextView
     private lateinit var ssidtv     : TextView
     private lateinit var tvUpdate   : TextView
-    private lateinit var emailtv        : TextView
     private lateinit var connectBt      : CardView
     private lateinit var disconnectBt   : CardView
     private lateinit var tvInputDevice  : TextView
-
     private lateinit var layoutInputDevice   : CardView
     private lateinit var layoutInfo          : CardView
 
@@ -56,7 +54,6 @@ class DeviceFragment: Fragment() {
         connectButton       = view.findViewById(R.id.connectBt)
         idInput             = view.findViewById(R.id.idInput)
         deviceIDtv          = view.findViewById(R.id.deviceID)
-        emailtv             = view.findViewById(R.id.email)
         connectBt           = view.findViewById(R.id.connectBt)
         tvInputDevice       = view.findViewById(R.id.tvInputDevice)
         layoutInputDevice   = view.findViewById(R.id.layoutInputDevice)
