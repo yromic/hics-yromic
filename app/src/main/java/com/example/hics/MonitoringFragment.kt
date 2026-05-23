@@ -92,10 +92,10 @@ class MonitoringFragment: Fragment() {
                         spinnerSuhu.visibility     = View.VISIBLE
                         spinnerNutrisi.visibility  = View.VISIBLE
 
-                        ppmMin = snapshot.child("phMin").value.toString()
-                        ppmMax = snapshot.child("phMax").value.toString()
-                        phMin  = snapshot.child("ppmMin").value.toString()
-                        phMax  = snapshot.child("ppmMax").value.toString()
+                        phMin  = snapshot.child("phMin").value.toString()
+                        phMax  = snapshot.child("phMax").value.toString()
+                        ppmMin = snapshot.child("ppmMin").value.toString()
+                        ppmMax = snapshot.child("ppmMax").value.toString()
                         val notif  = snapshot.child("notifAlert").value.toString()
                         val tUnit  = snapshot.child("tempUnit").value.toString()
                         val nUnit  = snapshot.child("ppmUnit").value.toString()
@@ -126,7 +126,7 @@ class MonitoringFragment: Fragment() {
                         etPpmMin.hint = ppmMin
                         etPpmMax.hint = ppmMax
 
-                        if(notif == "true") {
+                        if(notif.equals("true", ignoreCase = true)) {
                             updateSwitchUI(true)
                             isOn = true
                         }
