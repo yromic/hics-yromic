@@ -4,399 +4,463 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_home"
+    android:orientation="horizontal"
     android:weightSum="2">
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:weightSum="4"
+        android:layout_weight="1"
         android:orientation="vertical"
-        android:layout_weight="1">
-<!--        pompa air-->
+        android:weightSum="4">
+        <!--        pompa air-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:elevation="5dp"
-                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/bg_button"
+                android:elevation="5dp"
                 android:orientation="vertical"
                 android:weightSum="4"
                 app:cardCornerRadius="20dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:paddingLeft="10dp"
-                    android:layout_marginTop="5dp"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:layout_weight="1">
+                    android:paddingLeft="10dp">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/pompa_air"/>
+                        android:src="@drawable/pompa_air" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Pompa Air"
                         android:layout_marginLeft="5dp"
                         android:fontFamily="@font/poppinmedium"
-                        android:textSize="14sp"
-                        android:textColor="#08AAA3"/>
+                        android:text="Pompa Air"
+                        android:textColor="#08AAA3"
+                        android:textSize="14sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:gravity="center"
-                    android:layout_weight="2">
+                    android:layout_weight="2"
+                    android:gravity="center">
+
                     <TextView
                         android:id="@+id/statusSwitch"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="-"
                         android:fontFamily="@font/poppinsbold"
-                        android:textSize="28sp"
-                        android:textColor="#08AAA3"/>
+                        android:text="-"
+                        android:textColor="#08AAA3"
+                        android:textSize="28sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:gravity="center"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:gravity="center">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=""
                         android:fontFamily="@font/poppinsbold"
-                        android:textSize="14sp"
-                        android:textColor="#08AAA3"/>
+                        android:text=""
+                        android:textColor="#08AAA3"
+                        android:textSize="14sp" />
                 </LinearLayout>
-            </LinearLayout  >
+            </LinearLayout>
         </LinearLayout>
 
-<!--        nutrisi-->
+        <!--        nutrisi-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:weightSum="4"
-                android:elevation="5dp"
-                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/bg_button"
-                android:orientation="vertical">
+                android:elevation="5dp"
+                android:orientation="vertical"
+                android:weightSum="4">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:paddingLeft="10dp"
-                    android:layout_marginTop="5dp"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:layout_weight="1">
+                    android:paddingLeft="10dp">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/nutrisi"/>
+                        android:src="@drawable/nutrisi" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nutrisi"
                         android:layout_marginLeft="5dp"
                         android:fontFamily="@font/poppinmedium"
-                        android:textSize="14sp"
-                        android:textColor="#08AAA3"/>
+                        android:text="Nutrisi"
+                        android:textColor="#08AAA3"
+                        android:textSize="14sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:gravity="center"
-                    android:layout_weight="2">
+                    android:layout_weight="2"
+                    android:gravity="center">
+
                     <TextView
                         android:id="@+id/tvNutrisi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="-"
                         android:layout_marginLeft="5dp"
                         android:fontFamily="@font/poppinsbold"
-                        android:textSize="28sp"
-                        android:textColor="#08AAA3"/>
+                        android:text="-"
+                        android:textColor="#08AAA3"
+                        android:textSize="28sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:gravity="center"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:gravity="center">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="PPM"
                         android:fontFamily="@font/poppinsbold"
-                        android:textSize="14sp"
-                        android:textColor="#08AAA3"/>
+                        android:text="PPM"
+                        android:textColor="#08AAA3"
+                        android:textSize="14sp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
-<!--        pH-->
+        <!--        pH-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:weightSum="4"
-                android:elevation="5dp"
-                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/bg_button"
-                android:orientation="vertical">
+                android:elevation="5dp"
+                android:orientation="vertical"
+                android:weightSum="4">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:paddingLeft="10dp"
-                    android:layout_marginTop="5dp"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:layout_weight="1">
+                    android:paddingLeft="10dp">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ph"/>
+                        android:src="@drawable/ph" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="pH"
                         android:layout_marginLeft="5dp"
                         android:fontFamily="@font/poppinmedium"
-                        android:textSize="14sp"
-                        android:textColor="#08AAA3"/>
+                        android:text="pH"
+                        android:textColor="#08AAA3"
+                        android:textSize="14sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:gravity="center"
-                    android:layout_weight="2">
+                    android:layout_weight="2"
+                    android:gravity="center">
+
                     <TextView
                         android:id="@+id/tvPh"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="-"
                         android:layout_marginLeft="5dp"
                         android:fontFamily="@font/poppinsbold"
-                        android:textSize="28sp"
-                        android:textColor="#08AAA3"/>
+                        android:text="-"
+                        android:textColor="#08AAA3"
+                        android:textSize="28sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:gravity="center"
-                    android:layout_weight="1">
-                </LinearLayout>
+                    android:layout_weight="1"
+                    android:gravity="center"></LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
-<!--        suhu-->
+        <!--        suhu-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:weightSum="4"
-                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/bg_button"
                 android:elevation="5dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:weightSum="4">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:paddingLeft="10dp"
-                    android:layout_marginTop="5dp"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:layout_weight="1">
+                    android:paddingLeft="10dp">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/suhu"/>
+                        android:src="@drawable/suhu" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Suhu "
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="17dp"
                         android:fontFamily="@font/poppinmedium"
-                        android:textSize="14sp"
-                        android:textColor="#08AAA3"/>
+                        android:text="Suhu "
+                        android:textColor="#08AAA3"
+                        android:textSize="14sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    android:layout_weight="2.5"
                     android:gravity="center"
-                    android:weightSum="2"
                     android:orientation="vertical"
-                    android:layout_weight="2.5">
+                    android:weightSum="2">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
-                        android:weightSum="4"
-                        android:orientation="horizontal">
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/air_temp"
-                            android:layout_weight="1"/>
+                        android:orientation="horizontal"
+                        android:paddingLeft="14dp"
+                        android:paddingRight="12dp">
+
+                        <FrameLayout
+                            android:layout_width="28dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="10dp">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/air_temp" />
+                        </FrameLayout>
+
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1.5"
-                            android:text="Udara"
+                            android:layout_weight="1"
                             android:fontFamily="@font/poppinsbold"
-                            android:textSize="14sp"
-                            android:textColor="#08AAA3"/>
+                            android:text="Udara"
+                            android:textColor="#08AAA3"
+                            android:textSize="14sp" />
+
                         <TextView
                             android:id="@+id/airTemp"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="-"
-                            android:layout_weight="1.5"
+                            android:layout_weight="1"
                             android:fontFamily="@font/poppinsbold"
-                            android:textSize="14sp"
-                            android:textColor="#08AAA3"/>
+                            android:gravity="end"
+                            android:text="-"
+                            android:textColor="#08AAA3"
+                            android:textSize="14sp" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
-                        android:weightSum="4"
-                        android:orientation="horizontal">
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/air_temp"
-                            android:layout_weight="1"/>
+                        android:orientation="horizontal"
+                        android:paddingLeft="14dp"
+                        android:paddingRight="12dp">
+
+                        <FrameLayout
+                            android:layout_width="28dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="10dp">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/air_temp" />
+                        </FrameLayout>
+
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1.5"
-                            android:text="Air"
+                            android:layout_weight="1"
                             android:fontFamily="@font/poppinsbold"
-                            android:textSize="14sp"
-                            android:textColor="#08AAA3"/>
+                            android:text="Air"
+                            android:textColor="#08AAA3"
+                            android:textSize="14sp" />
+
                         <TextView
                             android:id="@+id/waterTemp"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1.5"
-                            android:text="-"
+                            android:layout_weight="1"
                             android:fontFamily="@font/poppinsbold"
-                            android:textSize="14sp"
-                            android:textColor="#08AAA3"/>
+                            android:gravity="end"
+                            android:text="-"
+                            android:textColor="#08AAA3"
+                            android:textSize="14sp" />
                     </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:gravity="center"
-                    android:layout_weight="0.5">
-                </LinearLayout>
+                    android:layout_weight="0.5"
+                    android:gravity="center"></LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:orientation="vertical"
-        android:weightSum="4"
-        android:layout_weight="1">
+        android:weightSum="4">
 
-<!--        kondisi air-->
+        <!--        kondisi air-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="3">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:weightSum="4"
-                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/bg_button"
                 android:elevation="5dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:weightSum="4">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:paddingLeft="10dp"
-                    android:layout_marginTop="5dp"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="0.25"
                     android:gravity="center_vertical"
-                    android:layout_weight="0.25">
+                    android:paddingLeft="10dp">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/water"/>
+                        android:src="@drawable/water" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ketersediaan Air "
                         android:layout_marginLeft="5dp"
                         android:fontFamily="@font/poppinmedium"
-                        android:textSize="13sp"
-                        android:textColor="#08AAA3"/>
+                        android:text="Ketersediaan Air "
+                        android:textColor="#08AAA3"
+                        android:textSize="13sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    android:layout_weight="3.75"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:weightSum="5"
-                    android:layout_weight="3.75">
+                    android:weightSum="5">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:orientation="vertical"
+                        android:layout_weight="4.5"
                         android:gravity="center"
-                        android:layout_weight="4.5">
+                        android:orientation="vertical">
+
                         <TextView
                             android:id="@+id/waterLevelPercent"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="-"
-                            android:textSize="25sp"
-                            android:fontFamily="@font/poppinsbold"
                             android:layout_marginBottom="5dp"
-                            android:textColor="#08AAA3"/>
+                            android:fontFamily="@font/poppinsbold"
+                            android:text="-"
+                            android:textColor="#08AAA3"
+                            android:textSize="25sp" />
+
                         <FrameLayout
                             android:id="@+id/baseWaterLevel"
                             android:layout_width="40dp"
                             android:layout_height="match_parent"
-                            android:elevation="5dp"
+                            android:background="@drawable/bg_air_putih"
                             android:clipChildren="true"
                             android:clipToPadding="true"
-                            android:background="@drawable/bg_air_putih">
+                            android:elevation="5dp">
+
                             <LinearLayout
                                 android:id="@+id/waterLevel"
                                 android:layout_width="match_parent"
@@ -407,89 +471,98 @@
                                 tools:ignore="Suspicious0dp" />
                         </FrameLayout>
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="0.5"/>
+                        android:layout_weight="0.5" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
-<!--        intensitas cahaya-->
+        <!--        intensitas cahaya-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:weightSum="4"
-                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/bg_button"
                 android:elevation="5dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:weightSum="4">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:paddingLeft="10dp"
-                    android:layout_marginTop="5dp"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:layout_weight="1">
+                    android:paddingLeft="10dp">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/cahaya"/>
+                        android:src="@drawable/cahaya" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Intensitas"
                         android:layout_marginLeft="5dp"
                         android:fontFamily="@font/poppinmedium"
-                        android:textSize="14sp"
-                        android:textColor="#08AAA3"/>
+                        android:text="Intensitas"
+                        android:textColor="#08AAA3"
+                        android:textSize="14sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:gravity="center"
-                    android:layout_weight="2">
+                    android:layout_weight="2"
+                    android:gravity="center">
+
                     <TextView
                         android:id="@+id/tvIntensitas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="-"
                         android:layout_marginLeft="5dp"
                         android:fontFamily="@font/poppinsbold"
-                        android:textSize="28sp"
-                        android:textColor="#08AAA3"/>
+                        android:text="-"
+                        android:textColor="#08AAA3"
+                        android:textSize="28sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:gravity="center"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:gravity="center">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="LUX"
                         android:fontFamily="@font/poppinsbold"
-                        android:textSize="14sp"
-                        android:textColor="#08AAA3"/>
+                        android:text="LUX"
+                        android:textColor="#08AAA3"
+                        android:textSize="14sp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
-        android:padding="16dp"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:visibility="gone"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:visibility="gone">
 
         <!-- HEADER -->
         <TextView
@@ -497,63 +570,63 @@
             android:layout_height="wrap_content"
             android:text="Dashboard HICS"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <!-- CARD POMPA -->
         <androidx.cardview.widget.CardView
-            android:layout_marginTop="16dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
 
             <TextView
                 android:id="@+id/tvPompa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Pompa: ON"
-                android:padding="16dp"/>
+                android:padding="16dp"
+                android:text="Pompa: ON" />
         </androidx.cardview.widget.CardView>
 
         <!-- DATA SENSOR -->
         <androidx.cardview.widget.CardView
-            android:layout_marginTop="12dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
 
             <LinearLayout
-                android:padding="16dp"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="pH: 6.5"/>
+                    android:text="pH: 6.5" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nutrisi: 900 ppm"/>
+                    android:text="Nutrisi: 900 ppm" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Suhu Air: 25°C"/>
+                    android:text="Suhu Air: 25°C" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Suhu Udara: 30°C"/>
+                    android:text="Suhu Udara: 30°C" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Intensitas: 10000 lux"/>
+                    android:text="Intensitas: 10000 lux" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Air: 80%"/>
+                    android:text="Air: 80%" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -562,13 +635,13 @@
             android:id="@+id/btnChart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Grafik"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp"
+            android:text="Grafik" />
 
         <Button
             android:id="@+id/btnSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pengaturan"/>
+            android:text="Pengaturan" />
     </LinearLayout>
 </LinearLayout>

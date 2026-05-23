@@ -15,71 +15,82 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="bottom"
-        android:paddingTop="10dp"
+        android:paddingTop="24dp"
         android:background="@drawable/background_home">
 
+<!--        EDIT HEADER POSITION HERE: ubah paddingTop/marginTop untuk menaikkan/menurunkan logo, title, subtitle, dan notification -->
 <!--        Ini bagian Logo & Notif-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:weightSum="4"
+            android:layout_weight="25"
             android:orientation="horizontal"
-            android:layout_weight="25">
+            android:paddingTop="7dp"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.75" />
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.75"/>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_weight="2.5"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:layout_weight="2.5">
+                android:orientation="vertical">
+
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/logo"/>
+                    android:layout_marginTop="6dp"
+                    android:src="@drawable/logo" />
+
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:layout_height="35dp"
+                    android:fontFamily="@font/poppinsbold"
                     android:text="HICS"
-                    android:textSize="28sp"
-                    android:fontFamily="@font/poppinsbold"/>
+                    android:textColor="@color/white"
+                    android:textSize="28sp" />
+
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="369dp"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinmedium"
+                    android:gravity="center"
                     android:text="Hydro-IoT Control System"
                     android:textColor="@color/white"
-                    android:gravity="center"
-                    android:fontFamily="@font/poppinmedium"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_weight="0.75"
                 android:gravity="center_horizontal"
-                android:layout_weight="0.75">
+                android:paddingTop="25dp">
 
                 <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_width="48dp"
+                    android:layout_height="40dp">
 
                     <ImageView
                         android:id="@+id/btn_notif"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:paddingRight="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="4dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
                         android:src="@drawable/notif" />
 
                     <TextView
                         android:id="@+id/badge_notif"
                         android:layout_width="17dp"
                         android:layout_height="17dp"
-                        android:layout_alignEnd="@+id/btn_notif"
-                        android:layout_marginEnd="4dp"
+                        android:layout_alignTop="@id/btn_notif"
+                        android:layout_alignEnd="@id/btn_notif"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="2dp"
                         android:background="@drawable/badge_background"
                         android:gravity="center"
                         android:text="0"
@@ -111,30 +122,34 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/bottom"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="72dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginBottom="8dp"
                 app:cardElevation="10dp"
                 android:background="@color/white"
                 android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="bottom"
-                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
                     android:background="@color/white"
                     android:weightSum="3">
                     <LinearLayout
                         android:id="@+id/homeBt"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:gravity="bottom"
+                        android:gravity="center"
                         android:orientation="vertical"
                         android:layout_weight="1">
                         <ImageView
                             android:id="@+id/imgHome"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
                             android:layout_gravity="center"
+                            android:scaleType="fitCenter"
                             android:src="@drawable/home_green"/>
                         <TextView
                             android:id="@+id/tvHome"
@@ -150,14 +165,15 @@
                         android:id="@+id/chartBt"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:gravity="bottom"
+                        android:gravity="center"
                         android:orientation="vertical"
                         android:layout_weight="1">
                         <ImageView
                             android:id="@+id/imgChart"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
                             android:layout_gravity="center"
+                            android:scaleType="fitCenter"
                             android:src="@drawable/chart_abu"/>
                         <TextView
                             android:id="@+id/tvChart"
@@ -173,14 +189,15 @@
                         android:id="@+id/settingBt"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:gravity="bottom"
+                        android:gravity="center"
                         android:orientation="vertical"
                         android:layout_weight="1">
                         <ImageView
                             android:id="@+id/imgSetting"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
                             android:layout_gravity="center"
+                            android:scaleType="fitCenter"
                             android:src="@drawable/setting_grey"/>
                         <TextView
                             android:id="@+id/tvSetting"
