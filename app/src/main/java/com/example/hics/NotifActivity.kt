@@ -26,9 +26,14 @@ class NotifActivity: AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter       = adapter
 
+        //dummy data notifikasii
         notifList.clear()
-        notifList.addAll(NotificationStore.getAll())
-        NotificationStore.markAllRead()
+        val notif = NotificationModel(
+            title = "Pompa Aktif",
+            message = "Pompa air dinyalakan"
+        )
+
+        notifList.add(notif)
         adapter.notifyDataSetChanged()
 
         back.setOnClickListener {
